@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <h1 style="font-size:50px; color:#62bbe1; text-align:left; padding:0 0 0 0; margin:120 0 30 0;">GAME SHOP
+	{%if not reg %}
+	<a align="center" href='{{ url_for('home')}}' style="font-size:25px; color:#6495ED;">На главную</a>
+	<a href='{{ url_for('registration')}}' style="font-size:25px; color:#6495ED;">Регистрация</a>
+	<a href='{{ url_for('entrance')}}' style="font-size:25px; color:#6495ED;">Вход</a>
+	{% endif %}
+
+	<p style="font-size:25px; color:#4d9ed5; text-align:left; padding:0 0 0 0; margin:0 0 0 0;">Это современный игровой маркетплейс. Здесь вы найдёте всё. От шутеров от первого лица, до детских развивающих игр.
+	</p>
+	
+	</h1>
+</head>
+	
+<body style="background:#00FA9A; background-image:url(static/11.png);">    
+	<center> <h1 style="font-size:25px; color:#6495ED;">Список игр, которые вы можете приобрести</h1>
+    {% for item in oflist %}
+    <br />
+    <br />
+    <br />
+    <h1 style="font-size:50px; color:#62bbe1;">{{item['title']}}</h1>
+	
+    <img src="{{url_for('static', filename=item['image'])}}" width="580px" height="350";" />
+    <br />
+	
+    <p style="font-size:25px; color:#4d9ed5;">{{item['description']}}</p>
+    <a href='{{ url_for('payment', game=item['title'], img=item['image'], cost=item['cost'])}}'> <button style="width: 200px; height: 50px;">Купить {{item['title']}} за {{item['cost']}} рубля.</button></a>
+    {% endfor %}
+</body>
+</html>

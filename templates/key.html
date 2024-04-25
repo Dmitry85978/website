@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+    <h1 style="font-size:50px; color:#62bbe1; text-align:left; padding:0 0 0 0; margin:120 0 50 0;">GAME SHOP
+	<a align="center" href='{{ url_for('home')}}' style="font-size:25px; color:#6495ED;">На главную</a>
+	<a href='{{ url_for('offers')}}' style="font-size:25px; color:#6495ED;">ПОЛНЫЙ КАТАЛОГ ИГР!</a>
+	<p style="font-size:25px; color:#4d9ed5; text-align:left; padding:0 0 0 0; margin:0 0 0 0;">Это современный игровой маркетплейс. Здесь вы найдёте всё. От шутеров от первого лица, до детских развивающих игр.
+	</p>
+	</h1>
+</head>
+
+<body style="background:#00FA9A; background-image:url(static/11.png);">
+
+    <center> <h1 style="font-size:25px; color:#4d9ed5;">Спасибо за покупку</h1>
+    <center> <h2 style="font-size:25px; color:#4d9ed5;">Ваши ключи:</h2>
+    <br />
+    {% for item in keys %}
+    <center> <h2 style="font-size:50px; color:#4d9ed5;">{{item}}</h2>
+    <br />
+    {% endfor %}
+	
+</body>
+</html>

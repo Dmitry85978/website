@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+	<h1 style="font-size:50px; color:#62bbe1; text-align:left; padding:0 0 0 0; margin:120 0 50 0;">GAME SHOP
+	<a align="center" href='{{ url_for('home')}}' style="font-size:25px; color:#6495ED;">На главную</a>
+	{%if not reg %}
+	<a href='{{ url_for('entrance')}}' style="font-size:25px; color:#6495ED;">Регистрация</a>
+	{% endif %}
+	<p style="font-size:25px; color:#4d9ed5; text-align:left; padding:0 0 0 0; margin:0 0 0 0;">Это современный игровой маркетплейс. Здесь вы найдёте всё. От шутеров от первого лица, до детских развивающих игр.
+	</p>
+	</h1>
+</head>
+
+<body style="background:#00FA9A; background-image:url(static/1.png);">
+
+    <center><h1 style="font-size:50px; color:#62bbe1;">{{game}}</h1>
+    <center><img src="{{url_for('static', filename=img)}}" width="580px" height="350";" />
+	
+    <h2 style="font-size:25px; color:#6495ED;">Количество покупаемых ключей от 1 до 10</h2>
+	
+    <form method="post">
+        <input type="submit" name="submit_button" value="-">
+        <h1 style="font-size:25px; color:#6495ED;">{{quantity}}</h1>     
+        <input type="submit" name="submit_button" value="+">
+    </form>
+	
+    <h2 style="font-size:25px; color:#6495ED;">Стоимость покупки - {{costpur}}</h2>
+	<p> </p>
+    <a href='{{ url_for('purchase', game=game, cost=cost, units=units)}}'> 
+	<button style="width: 200px; height: 50px;">Купить {{game}}</button></a>
+	
+</body>
+</html>

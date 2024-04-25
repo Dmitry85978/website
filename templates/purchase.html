@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <h1 style="font-size:50px; color:#62bbe1; text-align:left; padding:0 0 0 0; margin:120 0 50 0;">GAME SHOP
+	<a align="center" href='{{ url_for('home')}}' style="font-size:25px; color:#6495ED;">На главную</a>
+	<a href='{{ url_for('offers')}}' style="font-size:25px; color:#6495ED;">ПОЛНЫЙ КАТАЛОГ ИГР!</a>
+	<p style="font-size:25px; color:#4d9ed5; text-align:left; padding:0 0 0 0; margin:0 0 0 0;">Это современный игровой маркетплейс. Здесь вы найдёте всё. От шутеров от первого лица, до детских развивающих игр.
+	</p>
+	</h1>
+</head>
+
+<body style="background:#00FA9A; background-image:url(static/1.png);">
+
+	<center> <h1 style="font-size:25px; color:#4d9ed5;">Ваш заказ:</h1>
+    <center> <h2 style="font-size:25px; color:#4d9ed5;">{{game}} в количестве {{units}} штук</h2>
+    <center> <h2 style="font-size:25px; color:#4d9ed5;">По цене {{cost}} руб./шт.</h2>
+	
+    <form method="post">
+	
+        <center> <h3 style="font-size:25px; color:#4d9ed5; text-align:center;">Введите логин</h3>
+		
+        <center> <input size="50" type="text" name="login">
+		
+        <center><h3 style="font-size:25px; color:#4d9ed5; text-align:center;">Введите пароль</h3>
+		
+        <center><input size="50" type="password" name="password">
+		
+        <center> <h3 style="font-size:25px; color:#4d9ed5; text-align:center;">Введите номер карты</h3
+		
+        <center><input size="50" type="number" name="card">
+		
+		<p></p>
+        <button type="submit" style="width: 200px; height: 50px;">Подтвердить покупку</button>
+		
+    </form>
+	
+</body>
+</html>

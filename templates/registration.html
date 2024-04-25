@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+	<h1 style="font-size:50px; color:#62bbe1; text-align:left; padding:0 0 0 0; margin:120 0 50 0;">GAME SHOP
+	<a align="center" href='{{ url_for('home')}}' style="font-size:25px; color:#6495ED;">На главную</a>
+	{%if not reg %}
+	<a href='{{ url_for('entrance')}}' style="font-size:25px; color:#6495ED;">Регистрация</a>
+	{% endif %}
+	<p style="font-size:25px; color:#4d9ed5; text-align:left; padding:0 0 0 0; margin:0 0 0 0;">Это современный игровой маркетплейс. Здесь вы найдёте всё. От шутеров от первого лица, до детских развивающих игр.
+	</p>
+	</h1>	
+</head>
+
+<body style="background:#00FA9A; background-image:url(static/1.png);">
+
+    {%if reg %}
+    <center> <h1 style="color:#62bbe1;">Вы вошли в систему!</h1>
+	<center> <h1 style="color:#62bbe1;">Сул-сул, {{fr}}!</h1>
+    {% endif %}
+	{%if not reg %}
+    <form method="post">
+		<h2 style="font-size:30px; color:#4d9ed5; text-align:center;">Зарегистрируйтесь на нашем сайте уже сегодня!</h2>
+		
+        <center> <h3 style="font-size:25px; color:#4d9ed5; text-align:center;">Введите логин</h3>
+		
+        <center> <input size="50" type="text" name="login">
+		
+        <center><h3 style="font-size:25px; color:#4d9ed5; text-align:center;">Введите пароль</h3>
+		
+        <center><input size="50" type="password" name="password">
+		
+        <center><h3 style="font-size:25px; color:#4d9ed5; text-align:center;">Повторите пароль</h3>
+		
+        <center><input size="50" type="password" name="repeat_password">
+		<p></p>
+        <center><button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+	{% endif %}
+    {% if er %}
+    <center><h2>Неверный логин или пароль</h2>
+    {% endif %}
+    
+	
+</body>
+</html>
